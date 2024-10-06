@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Regular";
+  src: url("./assets/fonts/UncutSans-Regular.otf");
+}
+
+@font-face {
+  font-family: "Semibold";
+  src: url("./assets/fonts/UncutSans-Semibold.otf");
+}
+
+@layer base {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  @apply font-regular;
+}
