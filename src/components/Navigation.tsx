@@ -52,14 +52,23 @@ const Component: React.FC<CProps> = ({ toggle, links }) => {
 
   const useYScroll = useTransform(scrollYProgress, [0, 1], [0, 500]);
 
+  const obj = {};
+
   return (
     <AnimatePresence initial={false}>
       <motion.div
         layout
         style={{ justifyContent: toggle ? "center" : "space-between" }}
+        onLayoutAnimationComplete={func}
         className="fixed z-[999] flex w-full items-center justify-center p-[2.5rem]"
       >
-        <motion.img variants={v} animate={toggle ? "hidden" : "visible"} layout className="" src={logo} />
+        <motion.img
+          variants={v}
+          animate={toggle ? "hidden" : "visible"}
+          layout
+          style={{ width: toggle ? 0 : "60px" }}
+          src={logo}
+        />
         <motion.div
           layout
           className="static rounded-[1000px] border-l-[#f0f0f0] border-l-[] bg-[#f9f9f9bf] p-[.8rem] backdrop-blur-[5px]"
