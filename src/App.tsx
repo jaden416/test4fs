@@ -2,7 +2,6 @@ import vid from "./assets/video.mp4";
 import Navigation from "./components/Navigation";
 import { motion, useInView } from "framer-motion";
 import React from "react";
-import svgArrow from "./assets/arrow.svg";
 import IconButton from "./components/IconButton";
 import "./index.css";
 
@@ -13,7 +12,7 @@ function App() {
 
   return (
     <>
-      <Navigation view={view} />
+      <Navigation />
       <div className="flex h-[100svh] min-h-[100svh] flex-col">
         <div className="flex-1">
           <div className="relative h-full">
