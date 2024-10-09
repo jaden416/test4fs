@@ -2,26 +2,28 @@ import logo from "../assets/logo.svg";
 import logo2 from "../assets/logo2.svg";
 import uparrow from "../assets/uparrow.svg";
 import React, { ComponentPropsWithoutRef, useEffect } from "react";
-import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover";
+import { Popover, PopoverTrigger, PopoverContent, PopoverAnchor } from "@radix-ui/react-popover";
 
 export default function Navigation() {
   return (
     <header className="fixed z-10 flex w-full justify-between px-[4rem] py-[2rem]">
       <Popover>
         <div className="fixed inset-0 top-auto py-[1.5rem] lg:hidden">
-          <nav className="flex w-full justify-center">
-            <div className="flex gap-[1rem] rounded-[1000px] bg-[#f9f9f9bf] p-[.5rem]">
-              {images.map((image, index) => {
-                return (
-                  <CustomLink
-                    index={index}
-                    element={image}
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] hover:cursor-pointer hover:bg-[#e6e6e6]"
-                  />
-                );
-              })}
-            </div>
-          </nav>
+          <PopoverAnchor>
+            <nav className="flex w-full justify-center">
+              <div className="flex gap-[1rem] rounded-[1000px] bg-[#f9f9f9bf] p-[.5rem]">
+                {images.map((image, index) => {
+                  return (
+                    <CustomLink
+                      index={index}
+                      element={image}
+                      className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] hover:cursor-pointer hover:bg-[#e6e6e6]"
+                    />
+                  );
+                })}
+              </div>
+            </nav>
+          </PopoverAnchor>
         </div>
       </Popover>
 
@@ -49,7 +51,7 @@ interface CustomLinkProps extends ComponentPropsWithoutRef<"a"> {
 }
 const CustomLink = (props: CustomLinkProps) => {
   return (
-    <a key={props.index} className={props.className}>
+    <a tabIndex={1} key={props.index} className={props.className}>
       {props.element}
     </a>
   );
@@ -58,16 +60,26 @@ const CustomLink = (props: CustomLinkProps) => {
 const links: Array<React.ReactNode> = [<div>Home</div>, <div>About</div>, <div>Community</div>, <div>Contact</div>];
 
 const PopOverDemo = () => (
-  <Popover>
-    <PopoverTrigger>
-      <div className=" ">
-        <div className="mb-[4px] h-[2.5px] w-[22px] bg-black" />
-        <div className="h-[2.5px] w-[22px] bg-black" />
-      </div>
+  <>
+    <PopoverTrigger className="flex h-full w-full flex-col items-center justify-center">
+      <div className="mb-[4px] h-[2.5px] w-[22px] bg-black" />
+      <div className="h-[2.5px] w-[22px] bg-black" />
     </PopoverTrigger>
     <PopoverContent>
-      <p>Test</p>
+      <div className="p-2 font-black">
+        <div className="flex gap-[1rem]">
+          {links.map((link, index) => {
+            return (
+              <CustomLink
+                index={index}
+                element={link}
+                className="flex max-w-[100%] items-center rounded-[1000px] bg-[#f0f0f0] px-[1.6rem] py-[1.4rem] text-[1.5rem] font-light hover:cursor-pointer hover:bg-[#e6e6e6]"
+              />
+            );
+          })}
+        </div>
+      </div>
     </PopoverContent>
-  </Popover>
+  </>
 );
 const images: Array<React.ReactNode> = [<img src={logo2} />, <img src={uparrow} />, <PopOverDemo />];
