@@ -1,5 +1,5 @@
 import vid from "./assets/video.mp4";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation.tsx";
 import { motion, useInView } from "framer-motion";
 import React from "react";
 import IconButton from "./components/IconButton";
