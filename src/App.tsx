@@ -40,6 +40,27 @@ function App() {
               <IconButton text={"See our work"} />
             </div>
           </div>
+          <div className="max-w-[83.2rem] pt-[4rem]">
+            <p className="text-[2.4rem] max-sm:text-[2.4rem]">
+              You're here because you want to build something different. Something for meaningful and long-lasting
+              change. It's more than a business, more than a brand too. It's a part of you that feels big and brave.
+              Creating this kind of change takes a village. Let us be yours.
+            </p>
+          </div>{" "}
+          <div className="max-w-[83.2rem] pt-[4rem]">
+            <p className="text-[2.4rem] max-sm:text-[2.4rem]">
+              You're here because you want to build something different. Something for meaningful and long-lasting
+              change. It's more than a business, more than a brand too. It's a part of you that feels big and brave.
+              Creating this kind of change takes a village. Let us be yours.
+            </p>
+          </div>{" "}
+          <div className="max-w-[83.2rem] pt-[4rem]">
+            <p className="text-[2.4rem] max-sm:text-[2.4rem]">
+              You're here because you want to build something different. Something for meaningful and long-lasting
+              change. It's more than a business, more than a brand too. It's a part of you that feels big and brave.
+              Creating this kind of change takes a village. Let us be yours.
+            </p>
+          </div>
         </div>
       </header>
     </>

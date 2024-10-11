@@ -7,6 +7,8 @@ export default function Navigation() {
   // create state variable that tracks whether the modal is open
   return (
     <header className="fixed z-10 flex w-full justify-between px-[4rem] py-[2rem]">
+      <div className="pointer-events-none fixed inset-0 h-[100dvh] w-full backdrop-blur-[10px]" />
+
       <Nav.Root className="fixed inset-0 top-auto py-[1.5rem]">
         <div className="flex w-full flex-col justify-center px-[4rem]">
           <Nav.Viewport />
@@ -20,7 +22,7 @@ export default function Navigation() {
               <Item
                 children={null}
                 pressable={true}
-                modal={<Modal links={["Home", "About", "Contact", "Community", "Contact"]} />}
+                modal={<Modal links={["Home", "About", "Services", "Community", "Contact"]} />}
               />
             </Nav.List>
           </div>
@@ -56,33 +58,38 @@ const Item = (props: ItemProps) => {
     </Nav.Item>
   );
 };
-type ModalProps = { links: string[] };
+type ModalProps = {
+  links: string[];
+  open: boolean;
+};
 
 const Modal = (props: ModalProps) => {
   return (
-    <Nav.Content className="rounded-[14px] bg-[#f9f9f9bf] p-[2.4rem]">
-      <div className="flex flex-wrap gap-[6px]">
-        {props.links.map((item: string) => (
-          <Nav.Item
-            key={item}
-            tabIndex={0}
-            className="gap-6px flex max-w-[100%] items-center rounded-[1000px] bg-[#f0f0f0] px-[18px] py-[16px] text-[14px] hover:cursor-pointer hover:bg-[#e6e6e6]"
-          >
-            <p className="font-semimedium">{item}</p>
-          </Nav.Item>
-        ))}
-      </div>
-      <div className="pt-[2rem]" />
-      <div className="flex">
-        <p className="text-[1.6rem]">Privacy</p>
-      </div>
-      <div className="pt-[1rem]" />
-      <div className="flex flex-col gap-[8px]">
-        <p className="text-[1.6rem]">Instagram</p>
-        <p className="text-[1.6rem]">Privacy</p>
-      </div>
-      <div className="pt-[6.4rem]" />
-      <img src={biglogo} />
-    </Nav.Content>
+    <>
+      <Nav.Content className="z-50 mb-[.8rem] rounded-[14px] border border-[#d9d9d9] bg-[#f9f9f9bf] p-[2.4rem]">
+        <div className="flex flex-wrap gap-[6px]">
+          {props.links.map((item: string) => (
+            <Nav.Item
+              key={item}
+              tabIndex={0}
+              className="gap-6px flex max-w-[100%] items-center rounded-[1000px] bg-[#f0f0f0] px-[18px] py-[16px] text-[14px] hover:cursor-pointer hover:bg-[#e6e6e6]"
+            >
+              <p className="text-[1.5rem]">{item}</p>
+            </Nav.Item>
+          ))}
+        </div>
+        <div className="pt-[2rem]" />
+        <div className="flex">
+          <p className="text-[1.6rem]">Privacy</p>
+        </div>
+        <div className="pt-[1rem]" />
+        <div className="flex flex-col gap-[8px]">
+          <p className="text-[1.6rem]">Instagram</p>
+          <p className="text-[1.6rem]">LinkedIn</p>
+        </div>
+        <div className="pt-[6.4rem]" />
+        <img src={biglogo} />
+      </Nav.Content>
+    </>
   );
 };
