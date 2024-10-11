@@ -2,20 +2,23 @@ import logo2 from "../assets/logo2.svg";
 import uparrow from "../assets/uparrow.svg";
 import biglogo from "../assets/biglogo.svg";
 import * as Nav from "@radix-ui/react-navigation-menu";
+import React from "react";
 
 export default function Navigation() {
   // create state variable that tracks whether the modal is open
+  const [open, setOpen] = React.useState(false);
+
   return (
     <header className="fixed z-10 flex w-full justify-between px-[4rem] py-[2rem]">
       <div className="pointer-events-none fixed inset-0 h-[100dvh] w-full backdrop-blur-[10px]" />
 
       <Nav.Root className="fixed inset-0 top-auto py-[1.5rem]">
         <div className="flex w-full flex-col justify-center px-[4rem]">
-          <Nav.Viewport />
+          <Nav.Viewport forceMount />
 
           <div className="flex justify-center">
             {/* this list will be its own sub-component and it will either have links */}
-            <Nav.List className="flex gap-[1rem] rounded-[1000px] bg-[#f9f9f9bf] p-[.5rem]">
+            <Nav.List className="flex gap-[1rem] rounded-[1000px] border border-[#f0f0f0] bg-[#f9f9f9bf] p-[.5rem] backdrop-blur-[10px]">
               {/* this is a list item that is either pressable or unpressable*/}
               <Item children={<img src={logo2} />} />
               <Item children={<img src={uparrow} />} />
@@ -66,7 +69,10 @@ type ModalProps = {
 const Modal = (props: ModalProps) => {
   return (
     <>
-      <Nav.Content className="z-50 mb-[.8rem] rounded-[14px] border border-[#d9d9d9] bg-[#f9f9f9bf] p-[2.4rem]">
+      <Nav.Content
+        forceMount
+        className="z-50 mb-[.8rem] rounded-[14px] border border-[#d9d9d9] bg-[#f9f9f9bf] p-[2.4rem]"
+      >
         <div className="flex flex-wrap gap-[6px]">
           {props.links.map((item: string) => (
             <Nav.Item
