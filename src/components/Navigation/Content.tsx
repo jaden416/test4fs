@@ -69,6 +69,10 @@ export const transition = {
   duration: 0.8,
 };
 
+interface ModalProps {
+  links: string[];
+  open: boolean;
+}
 export default function Modal(props: ModalProps) {
   return (
     <>
