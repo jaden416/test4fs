@@ -7,7 +7,7 @@ import React from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Navigation() {
+export default function Mobile() {
   // create state variable that tracks whether the modal is open
   const [open, setOpen] = React.useState(false);
   return (
@@ -17,7 +17,7 @@ export default function Navigation() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="pointer-events-none fixed inset-0 h-[100dvh] w-full bg-[#000000ce]"
+          className="pointer-events-none fixed inset-0 h-[100dvh] w-full backdrop-blur-[8px]"
         />
       )}
 
@@ -33,13 +33,19 @@ export default function Navigation() {
 
               <Item children={<img src={uparrow} />} />
 
-              <Nav.Item className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0]">
+              <Nav.Item className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] hover:bg-[#e6e6e6]">
                 <Nav.Trigger
                   onClick={() => setOpen(!open)}
                   className="flex h-full w-full flex-col items-center justify-center rounded-[100px]"
                 >
-                  <div className="mb-[4px] h-[2.5px] w-[22px] bg-black" />{" "}
-                  <div className="h-[2.5px] w-[22px] bg-black" />
+                  <motion.div
+                    animate={{ rotate: open ? 45 : 0, y: open ? 3 : 0 }}
+                    className="mb-[4px] h-[2.5px] w-[22px] bg-black"
+                  />
+                  <motion.div
+                    animate={{ rotate: open ? -45 : 0, y: open ? -3 : 0 }}
+                    className="h-[2.5px] w-[22px] bg-black"
+                  />
                 </Nav.Trigger>
                 <Modal open={open} links={["Home", "About", "Services", "Community", "Contact"]} />
               </Nav.Item>
@@ -60,7 +66,10 @@ type ItemProps = UnconditionalItemProps & ConditionalItemProps;
 
 const Item = (props: ItemProps) => {
   return (
-    <Nav.Item className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0]">
+    <Nav.Item
+      tabIndex={1}
+      className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] hover:bg-[#e6e6e6]"
+    >
       {props.children}
     </Nav.Item>
   );

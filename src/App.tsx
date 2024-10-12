@@ -1,5 +1,5 @@
 import vid from "./assets/video.mp4";
-import Navigation from "./components/Navigation";
+import Mobile from "./components/Navigation/Mobile";
 import { motion, useInView } from "framer-motion";
 import React from "react";
 import svgArrow from "./assets/arrow.svg";
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <Navigation view={view} />
+      <Mobile view={view} />
       <div className="flex h-[100svh] min-h-[100svh] flex-col">
         <div className="flex-1">
           <div className="relative h-full">
@@ -39,6 +39,13 @@ function App() {
             <div className="flex gap-x-[1rem] pt-[4rem]">
               <IconButton text={"Get to know us"} />
               <IconButton text={"See our work"} />
+            </div>
+            <div className="max-w-[83.2rem] pt-[4rem]">
+              <p className="text-[2.4rem] max-sm:text-[2.4rem]">
+                You're here because you want to build something different. Something for meaningful and long-lasting
+                change. It's more than a business, more than a brand too. It's a part of you that feels big and brave.
+                Creating this kind of change takes a village. Let us be yours.
+              </p>
             </div>
           </div>
         </div>
