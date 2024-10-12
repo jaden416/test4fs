@@ -14,6 +14,7 @@ function App() {
 
   return (
     <>
+      <Mobile />
       <Desktop />
       <div className="flex h-[100svh] min-h-[100svh] flex-col">
         <div className="flex-1">

@@ -5,6 +5,26 @@ import logo2 from "../../assets/logo2.svg";
 import uparrow from "../../assets/uparrow.svg";
 import biglogo from "../../assets/biglogo.svg";
 
+const transition = {
+  type: "spring",
+  duration: 0.8,
+};
+
+interface ModalProps {
+  links: string[];
+  open: boolean;
+}
+
+interface MenuContentProps {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface ItemProps {
+  children: React.ReactNode;
+  handlePress?: () => void;
+}
+
 export const HomeLinkContent = () => {
   const { scrollY } = useScroll();
   const degree = useTransform(() => scrollY.get() * 0.4);
@@ -25,11 +45,6 @@ export const UpArrowContent = () => {
   );
 };
 
-interface MenuContentProps {
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
 export const MenuContent: React.FC<MenuContentProps> = ({ open, setOpen }) => {
   return (
     <>
@@ -48,11 +63,6 @@ export const MenuContent: React.FC<MenuContentProps> = ({ open, setOpen }) => {
   );
 };
 
-type ItemProps = {
-  children: React.ReactNode;
-  handlePress?: () => void;
-};
-
 export function Item(props: ItemProps) {
   return (
     <Nav.Item
@@ -64,15 +74,6 @@ export function Item(props: ItemProps) {
   );
 }
 
-export const transition = {
-  type: "spring",
-  duration: 0.8,
-};
-
-interface ModalProps {
-  links: string[];
-  open: boolean;
-}
 export default function Modal(props: ModalProps) {
   return (
     <>

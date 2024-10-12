@@ -2,6 +2,7 @@ import logo from "../../assets/logo.svg";
 import logo2 from "../../assets/logo2.svg";
 import uparrow from "../../assets/uparrow.svg";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, useTransform } from "framer-motion";
+
 import React from "react";
 
 declare module "react" {
