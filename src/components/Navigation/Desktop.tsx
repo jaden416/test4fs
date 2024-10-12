@@ -1,6 +1,6 @@
-import logo from "../assets/logo.svg";
-import logo2 from "../assets/logo2.svg";
-import uparrow from "../assets/uparrow.svg";
+import logo from "../../assets/logo.svg";
+import logo2 from "../../assets/logo2.svg";
+import uparrow from "../../assets/uparrow.svg";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent, useTransform } from "framer-motion";
 import React from "react";
 
@@ -110,25 +110,3 @@ const Component: React.FC<CProps> = ({ toggle, links }) => {
     </AnimatePresence>
   );
 };
-
-{
-  /* {toggle && (
-              <motion.a
-                layout
-                className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] text-[1rem] leading-[1]"
-              >
-                <motion.img layout src={logo2} className="" alt="logo" />
-              </motion.a>
-            )} */
-}
-
-{
-  /* {toggle && (
-              <motion.a
-                layout
-                className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] text-[1rem] leading-[1] hover:bg-[#e6e6e6]"
-              >
-                <img src={uparrow} className="" alt="logo" />
-              </motion.a>
-            )} */
-}

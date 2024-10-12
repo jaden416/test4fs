@@ -1,5 +1,6 @@
 import vid from "./assets/video.mp4";
 import Mobile from "./components/Navigation/Mobile";
+import Desktop from "./components/Navigation/Desktop";
 import { motion, useInView } from "framer-motion";
 import React from "react";
 import svgArrow from "./assets/arrow.svg";
@@ -13,7 +14,7 @@ function App() {
 
   return (
     <>
-      <Mobile view={view} />
+      <Desktop />
       <div className="flex h-[100svh] min-h-[100svh] flex-col">
         <div className="flex-1">
           <div className="relative h-full">
