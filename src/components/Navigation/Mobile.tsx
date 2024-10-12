@@ -1,14 +1,18 @@
-import logo from "../assets/logo.svg";
-import logo2 from "../assets/logo2.svg";
-import uparrow from "../assets/uparrow.svg";
-import biglogo from "../assets/biglogo.svg";
+import logo2 from "../../assets/logo2.svg";
+import uparrow from "../../assets/uparrow.svg";
+import biglogo from "../../assets/biglogo.svg";
 import * as Nav from "@radix-ui/react-navigation-menu";
 import React from "react";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent, cubicBezier } from "framer-motion";
 
 export default function Mobile() {
-  // create state variable that tracks whether the modal is open
+  // create state variable that tracks whether the modal is
+
+  const { scrollYProgress, scrollY } = useScroll();
+
+  const degree = useTransform(() => scrollY.get() * 0.4, transition);
+
   const [open, setOpen] = React.useState(false);
   return (
     <header className="fixed z-10 flex w-full justify-between px-[4rem] py-[2rem]">
@@ -29,9 +33,9 @@ export default function Mobile() {
             {/* this list will be its own sub-component and it will either have links */}
             <Nav.List className="flex gap-[1rem] rounded-[1000px] border border-[#f0f0f0] bg-[#f9f9f9bf] p-[.5rem] backdrop-blur-[10px]">
               {/* this is a list item that is either pressable or unpressable*/}
-              <Item children={<img src={logo2} />} />
+              <Item children={<motion.img src={logo2} style={{ rotate: degree }} />} />
 
-              <Item children={<img src={uparrow} />} />
+              <Item children={<motion.img src={uparrow} />} />
 
               <Nav.Item className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] hover:bg-[#e6e6e6]">
                 <Nav.Trigger
@@ -65,9 +69,14 @@ type ConditionalItemProps = {
 type ItemProps = UnconditionalItemProps & ConditionalItemProps;
 
 const Item = (props: ItemProps) => {
+  const top = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <Nav.Item
       tabIndex={1}
+      onClick={top}
       className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] hover:bg-[#e6e6e6]"
     >
       {props.children}
@@ -78,6 +87,7 @@ type ModalProps = {
   links: string[];
   open: boolean;
 };
+
 export const transition = {
   type: "spring",
   duration: 0.8,
