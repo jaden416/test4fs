@@ -22,7 +22,7 @@ export default function Navigation() {
       )}
 
       <Nav.Root className="fixed inset-0 top-auto py-[1.5rem]">
-        <div className="flex w-full flex-col justify-center px-[4rem]">
+        <div className="flex w-full flex-col justify-center gap-[8px] px-[4rem]">
           <Nav.Viewport forceMount />
 
           <div className="flex justify-center">
@@ -49,10 +49,6 @@ export default function Navigation() {
       </Nav.Root>
     </header>
   );
-}
-interface CProps {
-  toggle: boolean;
-  links: Array<string>;
 }
 
 type ConditionalItemProps = {
@@ -85,7 +81,7 @@ const Modal = (props: ModalProps) => {
         <AnimatePresence>
           {props.open && (
             <motion.div
-              className="z-50 mb-[.8rem] rounded-[14px] border border-[#d9d9d9] bg-[#f9f9f9bf] p-[2.4rem]"
+              className="z-50 rounded-[14px] border border-[#d9d9d9] bg-[#f9f9f9bf] p-[2.4rem]"
               initial={{ y: "100vh", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "100vh", opacity: 0 }}
