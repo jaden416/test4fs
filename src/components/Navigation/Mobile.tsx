@@ -1,10 +1,7 @@
-import logo2 from "../../assets/logo2.svg";
-import uparrow from "../../assets/uparrow.svg";
 import * as Nav from "@radix-ui/react-navigation-menu";
 import React from "react";
-import Item from "./Item";
-import Modal from "./Modal";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { UpArrowContent, HomeLinkContent, MenuContent, Item } from "./Content.tsx";
 
 export default function Mobile() {
   const [open, setOpen] = React.useState<boolean>(false);
@@ -37,46 +34,3 @@ export default function Mobile() {
     </header>
   );
 }
-
-const HomeLinkContent = () => {
-  const { scrollY } = useScroll();
-  const degree = useTransform(() => scrollY.get() * 0.4);
-  return <motion.img src={logo2} style={{ rotate: degree }} />;
-};
-
-const UpArrowContent = () => {
-  const top = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-  return (
-    <button onClick={top} className="flex h-full w-full items-center justify-center">
-      <motion.img src={uparrow} />
-    </button>
-  );
-};
-
-interface MenuContentProps {
-  open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const MenuContent: React.FC<MenuContentProps> = ({ open, setOpen }) => {
-  return (
-    <>
-      <Nav.Trigger
-        onClick={() => setOpen(!open)}
-        className="flex h-full w-full flex-col items-center justify-center rounded-[100px]"
-      >
-        <motion.div
-          animate={{ rotate: open ? 45 : 0, y: open ? 3 : 0 }}
-          className="mb-[4px] h-[2.5px] w-[22px] bg-black"
-        />
-        <motion.div animate={{ rotate: open ? -45 : 0, y: open ? -3 : 0 }} className="h-[2.5px] w-[22px] bg-black" />
-      </Nav.Trigger>
-      <Modal open={open} links={["Home", "About", "Services", "Community", "Contact"]} />
-    </>
-  );
-};
