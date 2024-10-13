@@ -68,11 +68,7 @@ export default function Desktop() {
             {icons && <Item className={logoClass} children={<HomeLinkContent />} />}
             {links.map((link, index) => {
               return (
-                <motion.a
-                  key={index}
-                  layout
-                  className="gap-6px flex max-w-[100%] items-center rounded-[1000px] bg-[#f0f0f0] px-[1.6rem] py-[1.4rem] text-[1.5rem] font-light hover:cursor-pointer hover:bg-[#e6e6e6]"
-                >
+                <motion.a key={index} layout className={itemClassName}>
                   {link}
                 </motion.a>
               );
