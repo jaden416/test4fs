@@ -14,8 +14,6 @@ const links = ["Home", "About", "Services", "Community", "Contact"];
 const MotionNav = motion.create(Nav.Root);
 const MotionList = motion.create(Nav.List);
 
-const MotionListItem = motion.create(Item);
-
 export default function Desktop() {
   const [position, setPosition] = React.useState(false);
   const [icons, setIcons] = React.useState(false);
