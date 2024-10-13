@@ -6,6 +6,8 @@ import { UpArrowContent, HomeLinkContent, MenuContent, Item } from "./Content.ts
 export default function Mobile() {
   const [open, setOpen] = React.useState<boolean>(false);
 
+  const logoClass =
+    "flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] hover:bg-[#e6e6e6]";
   return (
     <header className="fixed z-10 flex w-full justify-between px-[4rem] py-[2rem]">
       {open && (
@@ -22,11 +24,11 @@ export default function Mobile() {
           <Nav.Viewport forceMount />
           <div className="flex justify-center">
             <Nav.List className="flex gap-[1rem] rounded-[1000px] border border-[#f0f0f0] bg-[#f9f9f9bf] p-[.5rem] backdrop-blur-[10px]">
-              <Item children={<HomeLinkContent />} />
+              <Item className={logoClass} children={<HomeLinkContent />} />
 
-              <Item children={<UpArrowContent />} />
+              <Item className={logoClass} children={<UpArrowContent />} />
 
-              <Item children={<MenuContent open={open} setOpen={setOpen} />} />
+              <Item className={logoClass} children={<MenuContent open={open} setOpen={setOpen} />} />
             </Nav.List>
           </div>
         </div>

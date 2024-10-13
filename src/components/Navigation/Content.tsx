@@ -22,13 +22,14 @@ interface MenuContentProps {
 
 interface ItemProps {
   children: React.ReactNode;
+  className: string;
   handlePress?: () => void;
 }
 
 export const HomeLinkContent = () => {
   const { scrollY } = useScroll();
   const degree = useTransform(() => scrollY.get() * 0.4);
-  return <motion.img src={logo2} style={{ rotate: degree }} />;
+  return <motion.img layout src={logo2} style={{ rotate: degree }} />;
 };
 
 export const UpArrowContent = () => {
@@ -39,9 +40,9 @@ export const UpArrowContent = () => {
     });
   };
   return (
-    <button onClick={top} className="flex h-full w-full items-center justify-center">
+    <motion.button onClick={top} className="flex h-full w-full items-center justify-center">
       <motion.img src={uparrow} />
-    </button>
+    </motion.button>
   );
 };
 
@@ -65,10 +66,7 @@ export const MenuContent: React.FC<MenuContentProps> = ({ open, setOpen }) => {
 
 export function Item(props: ItemProps) {
   return (
-    <Nav.Item
-      tabIndex={1}
-      className="flex h-[50px] w-[50px] items-center justify-center rounded-[1000px] bg-[#f0f0f0] hover:bg-[#e6e6e6]"
-    >
+    <Nav.Item tabIndex={1} className={props.className}>
       {props.children}
     </Nav.Item>
   );
