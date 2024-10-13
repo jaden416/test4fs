@@ -52,13 +52,7 @@ export default function Desktop() {
         className="fixed z-[999] flex w-full items-center justify-center p-[2.5rem]"
         onLayoutAnimationComplete={set}
       >
-        <motion.img
-          variants={v}
-          animate={position ? "hidden" : "visible"}
-          layout
-          style={{ width: position ? 0 : "60px" }}
-          src={logo}
-        />
+        <motion.img variants={v} animate={position ? "hidden" : "visible"} layout src={logo} />
         <MotionList
           layout
           className="static rounded-[1000px] border-l-[#f0f0f0] border-l-[] bg-[#f9f9f9bf] p-[.8rem] backdrop-blur-[5px]"
