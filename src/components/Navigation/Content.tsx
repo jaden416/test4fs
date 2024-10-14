@@ -79,7 +79,7 @@ export default function Modal(props: ModalProps) {
         <AnimatePresence>
           {props.open && (
             <motion.div
-              className="z-50 rounded-[14px] border border-[#d9d9d9] bg-[#f9f9f9bf] p-[2.4rem]"
+              className="z-[50] rounded-[14px] border border-[#d9d9d9] bg-[#f9f9f9bf] p-[2.4rem]"
               initial={{ y: "100vh", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: "100vh", opacity: 0 }}
