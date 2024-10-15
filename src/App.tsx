@@ -52,7 +52,7 @@ function App() {
           <h2 className="font-semibold text-[4.8rem] max-sm:text-[4rem]">Featured Projects</h2>
           <div className="flex flex-col flex-wrap gap-[1.5rem] py-[3.2rem] md:flex-row">
             {data.map((obj) => {
-              return <WorkItem video={obj.src} className={obj.className} />;
+              return <WorkItem video={obj.src} className={obj.className} title={obj.title} tags={obj.tags} />;
             })}
           </div>
         </Container>
