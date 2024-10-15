@@ -10,6 +10,7 @@ import { data } from "./assets/data.ts";
 
 import vid1 from "./assets/videos/1.mp4";
 import vid2 from "./assets/videos/2.mp4";
+import BigButton from "./components/BigButton.tsx";
 
 function App() {
   const ref = React.useRef(null);
@@ -55,8 +56,11 @@ function App() {
               return <WorkItem video={obj.src} className={obj.className} title={obj.title} tags={obj.tags} />;
             })}
           </div>
+          <BigButton />
         </Container>
       </div>
+
+      <div className="pt-[40rem]"></div>
     </>
   );
 }
