@@ -5,8 +5,9 @@ import Container, { Grid } from "./components/Container";
 import WorkItem from "./components/WorkItem";
 import IconButton from "./components/IconButton";
 import "./index.css";
-
+import logo from "./assets/biglogo.svg";
 import { data } from "./assets/data.ts";
+import svgArrow from "./assets/whitearrow.svg";
 
 import vid1 from "./assets/videos/1.mp4";
 import vid2 from "./assets/videos/2.mp4";
@@ -95,15 +96,15 @@ function App() {
         </Container>
       </div>
 
-      <div className="pt-[40rem]"></div>
+      <div className="pt-[10rem]"></div>
       <section className="bg-[#f0f0f0]">
         <Container>
-          <footer className="pb-[4rem] pt-[7.2rem]">
+          <footer className="flex flex-col gap-[12rem] pb-[4rem] pt-[7.2rem]">
             <Grid>
               <div></div>
               <div className="flex flex-col gap-[2.4rem]">
                 <div className="flex w-full flex-col gap-[2.4rem]">
-                  <h1 className="text-[6.4rem] font-bold leading-[105%]">
+                  <h1 className="text-[7.2rem] font-bold leading-[105%]">
                     Ready to be a change-maker? It's time we talked.
                   </h1>
                   <div className="flex">
@@ -111,6 +112,57 @@ function App() {
                       text={"Get in touch"}
                       className="flex items-center gap-x-[6px] rounded-[1000px] bg-[#ffffff] p-[1.2rem] pr-0 text-[1.6rem] hover:cursor-pointer"
                     />
+                  </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid>
+              <div className="w-full">
+                <img src={logo} className="w-[85%]" />
+              </div>
+              <div className="flex w-full flex-col">
+                <div className="flex flex-col justify-between gap-[8rem] md:flex-row md:gap-0">
+                  <div className="grid grid-cols-[1fr,1fr,1fr,1fr] grid-rows-[auto] items-start gap-[4rem]">
+                    <div className="flex flex-col items-start justify-items-start">
+                      <a className="text-[1.6rem]">Home</a>
+                      <a className="text-[1.6rem]">Work</a>
+                      <a className="text-[1.6rem]">About</a>
+                      <a className="text-[1.6rem]">Services</a>
+                    </div>
+                    <div className="flex flex-col items-start justify-items-start">
+                      <a className="text-[1.6rem]">Community</a>
+                      <a className="text-[1.6rem]">Contact</a>
+                      <a className="text-[1.6rem]">Privacy</a>
+                    </div>
+                    <div className="flex flex-col items-start justify-items-start">
+                      <a className="text-[1.6rem]">Instagram</a>
+                      <a className="text-[1.6rem]">LinkedIn</a>
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <p className="pb-[1.6rem] text-[1.6rem]">
+                      For those interested in business, technology, creativity and being human.
+                    </p>
+                    <div className="flex w-full items-center justify-between rounded-[1000px] bg-white p-[1.2rem]">
+                      <p className="text-[1.6rem]">Your email</p>
+                      <div className="relative h-[3.8rem] w-[3.8rem] rounded-[1000px]">
+                        <img src={svgArrow} className="absolute top-[11px] h-[16px] w-[20px]" />
+                      </div>
+                    </div>
+                    <p className="pt-[1.6rem] text-[1.2rem] text-[#999]">
+                      By subscribing you agree to with our Privacy Policy and provide consent to receive updates from
+                      our company.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-[2.4rem]">
+                  <div className="flex flex-col">
+                    <p className="text-[1.2rem] uppercase">hey@andhuman.co</p>
+                    <p className="text-[1.2rem]">Geneva, Switzerland</p>
+                  </div>
+                  <div className="flex flex-col">
+                    <p className="text-[1.2rem] uppercase">by andhuman + studio—y</p>
+                    <p className="text-[1.2rem]">@andhuman 2024</p>
                   </div>
                 </div>
               </div>
