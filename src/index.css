@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "Regular";
-  src: url("./assets/fonts/UncutSans-Regular.otf");
+  src: url("./assets/fonts/SuisseIntlTrial-Regular.woff2");
 }
 
 @font-face {
-  font-family: "Semibold";
-  src: url("./assets/fonts/UncutSans-Semibold.otf");
+  font-family: "suiss-medium";
+  src: url("./assets/fonts/SuisseIntlTrial-Medium.woff2");
 }
 
 @layer base {

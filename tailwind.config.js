@@ -8,7 +8,7 @@ export default {
       },
       fontFamily: {
         regular: ["Regular"],
-        semibold: ["Semibold"],
+        suiss_Medium: ["suiss-medium"],
       },
       spacing: {
         0: "0",
