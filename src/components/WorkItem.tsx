@@ -1,5 +1,3 @@
-import React from "react";
-
 import { stagger, motion, useAnimate } from "framer-motion";
 
 export default function WorkItem({

@@ -9,8 +9,6 @@ import logo from "./assets/biglogo.svg";
 import { data } from "./assets/data.ts";
 import svgArrow from "./assets/whitearrow.svg";
 
-import vid1 from "./assets/videos/1.mp4";
-import vid2 from "./assets/videos/2.mp4";
 import BigButton from "./components/BigButton.tsx";
 import IconGrid from "./components/IconGrid.tsx";
 

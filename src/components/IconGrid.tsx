@@ -1,6 +1,3 @@
-import React from "react";
-import { motion } from "framer-motion";
-import circle from "../assets/illustrations/circle.svg";
 import { data } from "../assets/illustrations/data.ts";
 
 function IconGrid() {

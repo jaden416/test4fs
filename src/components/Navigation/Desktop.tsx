@@ -25,7 +25,7 @@ export default function Desktop() {
   };
 
   React.useEffect(() => {
-    if (position == false) setIcons((prev) => (prev = position));
+    if (position == false) setIcons(position);
   }, [position]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -40,7 +40,7 @@ export default function Desktop() {
     "gap-6px flex max-w-[100%] items-center rounded-[1000px] bg-[#f0f0f0] px-[1.6rem] py-[1.4rem] text-[1.5rem] font-light hover:cursor-pointer hover:bg-[#e6e6e6]";
 
   function set() {
-    setIcons((prev) => (prev = position));
+    setIcons(position);
   }
   return (
     <AnimatePresence initial={false}>
