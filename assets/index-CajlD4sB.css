@@ -879,11 +879,11 @@ html {
 }
 @font-face {
   font-family: Regular;
-  src: url(/assets/SuisseIntlTrial-Regular-YvZHhhtc.woff2);
+  src: url(./assets/SuisseIntlTrial-Regular-YvZHhhtc.woff2);
 }
 @font-face {
   font-family: suiss-medium;
-  src: url(/assets/SuisseIntlTrial-Medium-k-dAD4KS.woff2);
+  src: url(./assets/SuisseIntlTrial-Medium-k-dAD4KS.woff2);
 }
 body {
   font-family: Regular;

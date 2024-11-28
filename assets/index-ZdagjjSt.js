@@ -17629,7 +17629,7 @@ const C0 =
     });
   },
   PP = "./assets/1-BGqPiR1P.mp4",
-  EP = "/assets/2-BumfWUyF.mp4",
+  EP = "./assets/2-BumfWUyF.mp4",
   TP = "./assets/3-CG3-zJ-I.mp4",
   kP = "./assets/4-BbwScx6y.mp4",
   NP = "./assets/5-BV-8Nm_H.mp4",
